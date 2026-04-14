@@ -26,13 +26,13 @@ public class AuthService : IAuthService
 
     public async Task<AuthResponse> RegisterAsync(RegisterRequest request)
     {
-        // Check if user already exists
-        if (_context.Users.Any(u => u.Username == request.Username || u.Email == request.Email))
+        // Check if user already exists (only check username since email is optional)
+        if (_context.Users.Any(u => u.Username == request.Username))
         {
             return new AuthResponse
             {
                 Success = false,
-                Message = "Username or email already exists"
+                Message = "Username already exists"
             };
         }
 
@@ -43,7 +43,7 @@ public class AuthService : IAuthService
         var user = new User
         {
             Username = request.Username,
-            Email = request.Email,
+            Email = request.Email ?? $"{request.Username}@example.com", // Use default email if not provided
             PasswordHash = passwordHash,
             PasswordSalt = salt,
             CreatedAt = DateTime.UtcNow

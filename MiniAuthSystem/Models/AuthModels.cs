@@ -3,7 +3,7 @@ namespace MiniAuthSystem.Models;
 public class RegisterRequest
 {
     public string Username { get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
+    public string? Email { get; set; } // Optional for simplified registration
     public string Password { get; set; } = string.Empty;
 }
 
