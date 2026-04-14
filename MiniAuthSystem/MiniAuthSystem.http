@@ -1,0 +1,50 @@
+@MiniAuthSystem_HostAddress = http://localhost:5130
+
+### 測試公開端點 - 健康檢查
+GET {{MiniAuthSystem_HostAddress}}/api/public/health
+Accept: application/json
+
+###
+
+### 測試公開端點 - 系統資訊
+GET {{MiniAuthSystem_HostAddress}}/api/public/info
+Accept: application/json
+
+###
+
+### 用戶註冊
+POST {{MiniAuthSystem_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###
+
+### 用戶登入
+POST {{MiniAuthSystem_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+###
+
+### 訪問受保護端點 - 需要 JWT Token (請將 YOUR_JWT_TOKEN 替換為實際的 Token)
+GET {{MiniAuthSystem_HostAddress}}/api/protected/profile
+Authorization: Bearer YOUR_JWT_TOKEN
+Accept: application/json
+
+###
+
+### 訪問受保護端點 - 獲取資料
+GET {{MiniAuthSystem_HostAddress}}/api/protected/data
+Authorization: Bearer YOUR_JWT_TOKEN
+Accept: application/json
+
+###

@@ -1,0 +1,27 @@
+# Build outputs
+bin/
+obj/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# User secrets
+secrets.json
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
