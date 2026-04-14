@@ -1,5 +1,10 @@
 # Mini-Auth-System
 
+[![.NET](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/)
+[![C#](https://img.shields.io/badge/C%23-12.0-purple.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![JWT](https://img.shields.io/badge/JWT-Token-green.svg)](https://jwt.io/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 一個簡單的 .NET 8 Web API 身份驗證系統，實現基本的註冊、登入功能，並使用 JWT Token 進行身份驗證。
 
 ## 功能特色
