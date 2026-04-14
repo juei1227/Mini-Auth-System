@@ -25,3 +25,8 @@ secrets.json
 # Temporary files
 *.tmp
 *.temp
+
+# Database files
+*.db
+*.db-shm
+*.db-wal

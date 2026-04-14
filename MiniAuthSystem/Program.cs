@@ -63,7 +63,7 @@ builder.Services.AddAuthorization();
 
 // Add database context
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseInMemoryDatabase("MiniAuthSystemDb"));
+    options.UseSqlite("Data Source=mini-auth-system.db"));
 
 // Add services
 builder.Services.AddScoped<IAuthService, AuthService>();
